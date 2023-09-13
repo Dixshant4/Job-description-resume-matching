@@ -3,7 +3,7 @@ from pdfminer.high_level import extract_text
 import openai
 import sqlite3
 import json
-openai.api_key = "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"
+openai.api_key = "insert API key"
 
 # A function to extract text from pdfs
 def extract_text_from_pdf(pdf_path):
