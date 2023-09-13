@@ -1,13 +1,13 @@
 import sqlite3
 import json
 import numpy as np
-from job_description import jd_skills
+from job_description import jd_skills # job_description was a temporary file on my work desktop
 import re
 
 candidate_scores = []
 
 # Open a connection to the SQLite database
-conn = sqlite3.connect('/Users/shree89330/Documents/UofT/Quest internship/test/resume_database.db')
+conn = sqlite3.connect('file path to resume_database.db')
 cursor = conn.cursor()
 
 
@@ -48,8 +48,8 @@ for row in rows:
     yrs_of_exp = experiece(total_years_of_work_experience)
 
     # determine how many skills from the resume_skills list match with those in
-    # the jd_skills list as a percentage of the total number of skills in the
-    # jd_skills list.
+    # the jd_skills (job_description_skills) list as a percentage of the total number of skills in the
+    # jd_skills list. JD skills can be retrieved from the given job description.
     def skills_matched(resume_skills, jd_skills):
         resume_skills = [skill.lower() for skill in resume_skills]
         jd_skills = [skill.lower() for skill in jd_skills]
@@ -59,10 +59,9 @@ for row in rows:
         return percentage_match
 
 
-    ## scoring the candidate ##
+    ## Below is the matching/scoring algorithm. This can be modified based on specific use cases. ##
+    
     candidate_score = 0
-
-    # if location == 'bangalore' or 'Bangalore':
     if yrs_of_exp > 10:
         candidate_score += 1
     elif 2 <= yrs_of_exp < 10:
