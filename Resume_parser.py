@@ -10,7 +10,7 @@ def extract_text_from_pdf(pdf_path):
     return extract_text(pdf_path)
 
 # Path to the folder containing resumes
-resume_folder = "/Users/shree89330/Documents/UofT/Quest internship/Resumes"
+resume_folder = "path to folder containing resumes"
 
 # List all files in the folder
 files = os.listdir(resume_folder)
@@ -64,8 +64,6 @@ for file in files:
                           educational_background TEXT,
                           certifications TEXT,
                           total_years_of_work_experience TEXT)''')
-
-        # outputs = ['{\n  "skills": [\n    "Machine Learning",\n    "Python",\n    "Scientific Data Analysis",\n    "Leadership",\n    "Teamwork",\n    "Quantum Mechanics",\n    "Quantum Information",\n    "Advanced Classical Mechanics",\n    "Electromagnetic Theory",\n    "Partial Differential Equations",\n    "Intro to Machine Learning",\n    "Software Design",\n    "Multivariable Calculus",\n    "Linear Algebra",\n    "Thermal Physics",\n    "XRD",\n    "EXAFS",\n    "Computational Fluid Dynamics",\n    "Bravais Lattices",\n    "Crystal Structure Groups",\n    "GSAS Software",\n    "Lab Experience",\n    "Cryogenic Techniques",\n    "Four-Probe Method",\n    "Resistance Bridge",\n    "Thermoelectric Generators",\n    "Data Analysis",\n    "Fluid Dynamics",\n    "ANSYS CFX",\n    "Leadership Skills",\n    "Communication Skills",\n    "Problem-Solving",\n    "Critical Thinking",\n    "Inclusivity and Diversity",\n    "Astrophysics",\n    "Blackholes",\n    "General Relativity",\n    "Effective Communication",\n    "Collaboration",\n    "Scuba Diving",\n    "Film Making",\n    "Adobe Creative Suite",\n    "Bhangra Dancing",\n    "Mechatronics",\n    "Tinkering",\n    "Soldering",\n    "Model United Nations",\n    "Cricket",\n    "Football"\n  ],\n  "location": [\n    "Toronto",\n    "Canada",\n    "Singapore",\n    "Cincinnati",\n    "USA",\n    "Mae Sot",\n    "Thailand"\n  ],\n  "name": ["Dixshant Shreemal"],\n  "phone_number": ["+1778-839-3972"],\n  "email": ["dixshant.shree@mail.utoronto.ca"],\n  "educational_background": [\n    "University of Toronto St. George, Canada",\n    "Bachelor of Science: Physics Specialist, Computer Science and Math Minor. CGPA: 3.78/4.00",\n    "Relevant courses: Quantum Mechanics 1, Quantum information, Advanced Classical Mechanics, Electromagnetic Theory, Partial differential equations, Intro to Machine Learning, Software design, Multivariable Calculus, Linear algebra 1, Thermal Physics. Lab: Practical Physics 1, Practical Physics 2, Electronics.",\n    "United World College, Singapore",\n    "International Baccalaureate (IB) Diploma: 44/45 Points.",\n    "Subjects: (Higher Level): Physics, Chemistry, Mathematics; (Standard Level): English, Spanish, Psychology."\n  ],\n  "certifications": ["PADI Certified Scuba Diver"],\n  "total_years_of_work_experience": "2"\n}']
 
         # One major problem is GPT returns text values. It is in string format. Need to convert it ourselves into dict type
         item = json.loads(response)
